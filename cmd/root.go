@@ -35,17 +35,15 @@ var connectCmd = &cobra.Command{
 	},
 }
 
-var stopCmd = &cobra.Command{
-	Use:   "stop",
-	Short: "stop connection to cloudsql instance",
-	Args:  cobra.ExactArgs(2),
+var disconnectCmd = &cobra.Command{
+	Use:   "disconnect",
+	Short: "disconnect cloudsql instance proxy",
+	// Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("Inside subCmd Run with args: %v\n", args)
+		disconnectInstance()
 	},
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	err := connectCmd.Execute()
 	if err != nil {
@@ -54,7 +52,7 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.AddCommand(stopCmd, connectCmd)
+	rootCmd.AddCommand(disconnectCmd, connectCmd)
 	connectCmd.PersistentFlags().String("env", "dev", "environment")
 	connectCmd.PersistentFlags().Int("port", 5432, "port")
 }

@@ -65,6 +65,7 @@ func getInstance(env string) string {
 
 	if err != nil {
 		fmt.Printf("Prompt failed %v\n", err)
+		os.Exit(1)
 		return ""
 	}
 

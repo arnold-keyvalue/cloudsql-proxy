@@ -1,4 +1,4 @@
-module arnold-keyvalue/cloudsql-proxy
+module bukukasio/dbcon
 
 go 1.18
 
