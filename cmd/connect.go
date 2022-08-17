@@ -23,6 +23,9 @@ func setProject(env string) string {
 		project = "beecash-staging"
 	case "prod":
 		project = "tokko-production"
+	default:
+		fmt.Print("Invalid Environment\n Please enter a valid environment: dev, staging, prod\n")
+		os.Exit(1)
 	}
 	return project
 }

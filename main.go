@@ -4,7 +4,7 @@ Copyright © 2022 arnoldjohnson401@gmail.com
 */
 package main
 
-import "bukukasio/dbcon/cmd"
+import "bukukasio/lummo-sqlproxy/cmd"
 
 func main() {
 	cmd.Execute()

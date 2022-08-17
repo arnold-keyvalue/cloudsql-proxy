@@ -1,4 +1,4 @@
-module bukukasio/dbcon
+module bukukasio/lummo-sqlproxy
 
 go 1.18
 

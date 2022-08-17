@@ -19,7 +19,7 @@ var rootCmd = &cobra.Command{
 }
 
 var connectCmd = &cobra.Command{
-	Use:   "connect [environment]",
+	Use:   "connect",
 	Short: "connect to cloudsql instance",
 	Run: func(cmd *cobra.Command, args []string) {
 		env, _ := cmd.Flags().GetString("env")
@@ -53,6 +53,6 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(disconnectCmd, connectCmd)
-	connectCmd.PersistentFlags().String("env", "dev", "environment")
+	connectCmd.PersistentFlags().String("env", "dev", "environment\nSupported environments: dev, staging, prod")
 	connectCmd.PersistentFlags().Int("port", 5432, "port")
 }
